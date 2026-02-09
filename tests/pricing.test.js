@@ -17,4 +17,8 @@ describe("calculateFinalAmount tests", () => {
         expect(() => calculateFinalAmount(-1, "SAVE10")).toThrow("Invalid subtotal");
         expect(() => calculateFinalAmount("100", "SAVE10")).toThrow("Invalid subtotal");
     });
+
+    test("coupon codes are case-insensitive", () => {
+        expect(calculateFinalAmount(100, "save10")).toBe(90);
+    });
 });

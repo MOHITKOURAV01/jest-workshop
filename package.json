@@ -7,5 +7,9 @@
   },
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "npm": "^11.9.0",
+    "test": "^3.3.0"
   }
 }
