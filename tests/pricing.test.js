@@ -12,4 +12,9 @@ describe("calculateFinalAmount tests", () => {
     test("FLAT50 coupon doesn't make total negative", () => {
         expect(calculateFinalAmount(40, "FLAT50")).toBe(0);
     });
+
+    test("throws error if subtotal is invalid", () => {
+        expect(() => calculateFinalAmount(-1, "SAVE10")).toThrow("Invalid subtotal");
+        expect(() => calculateFinalAmount("100", "SAVE10")).toThrow("Invalid subtotal");
+    });
 });
